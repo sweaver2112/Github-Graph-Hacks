@@ -4,7 +4,7 @@ var rect = [...document.querySelector(".js-calendar-graph-svg").querySelectorAll
 (function draw(t) {
     let move = Math.floor(t/20%53)
     rect.forEach((r, i) => {
-        let y = Math.ceil(i%7)
+        let y = Math.floor(i%7)
         let xc = Math.floor(i/7)-move     
         let four = tank[xc+","+y];
         let three = tank[xc+1+","+y];
