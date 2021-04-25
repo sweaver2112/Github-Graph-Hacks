@@ -5,11 +5,11 @@ var rect = [...document.querySelector(".js-calendar-graph-svg").querySelectorAll
     let move = Math.floor(t/20%53)
     rect.forEach((r, i) => {
         let y = Math.floor(i%7)
-        let xc = Math.floor(i/7)-move     
-        let four = tank[xc+","+y];
-        let three = tank[xc+1+","+y];
-        let two = tank[xc+2+","+y];
-        let one = tank[xc+3+","+y];
+        let x = Math.floor(i/7)-move     
+        let four = tank[x+","+y];
+        let three = tank[x+1+","+y];
+        let two = tank[x+2+","+y];
+        let one = tank[x+3+","+y];
         (four||three||two||one)?r.setAttribute("data-level", four?4:three?3:two?2:one?1:0):r.setAttribute("data-level", 0)
     })
     requestAnimationFrame(draw)
